@@ -1,1 +1,1 @@
-# aws-api-gateway-demo
+# AWS API Gateway demo
