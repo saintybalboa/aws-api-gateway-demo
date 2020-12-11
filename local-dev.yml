@@ -1,0 +1,19 @@
+service: aws-api-gateway-demo-local-dev
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+functions:
+  ${file(./functions.yml)}
+
+custom:
+  serverless-offline:
+    httpPort: 4000

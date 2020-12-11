@@ -1,0 +1,9 @@
+login:
+  handler: ./src/api/auth/login.handler # required, handler set in AWS Lambda
+  name: UserLoginHandler # optional, Deployed Lambda name
+  description: Creates a user in cognito # optional, Description to publish to AWS
+  runtime: nodejs12.x # optional overwrite, default is provider runtime
+  memorySize: 512 # optional, in MB, default is 1024
+  timeout: 10 # optional, in seconds, default is 6
+  events:
+    - http: POST user/login
