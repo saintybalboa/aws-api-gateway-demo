@@ -6,3 +6,4 @@ login:
     - http:
         method: post
         path: /auth/login
+        cors: true
