@@ -1,0 +1,17 @@
+name: Main Workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger-deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: saintybalboa/serverless-demo
+        event-type: api-deploy
+        client-payload: '{"sha": "${{ github.sha }}", "repo": "saintybalboa/aws-api-gateway-demo"}'
