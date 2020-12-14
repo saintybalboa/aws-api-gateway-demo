@@ -11,6 +11,11 @@ Uses [Serverless](https://www.serverless.com/) with the following plugins for lo
 - [serverless-dotenv-plugin](https://www.npmjs.com/package/serverless-dotenv-plugin): preloads environment variables from `.env` into serverless.
 - [serverless-plugin-typescript](https://www.npmjs.com/package/serverless-plugin-typescript): automatically compiles Typescript on file change and restarts services in local development.
 
+Set the following environment variable to the Github Personal Access Token to authenticate against the Github package registry:
+```bash
+export NPM_AUTH_TOKEN=XXXX
+```
+
 Install dependencies:
 ```bash
 npm i -g serverless
